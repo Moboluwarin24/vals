@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A Small Hunt</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --blush: #fff5f9;
+        --petal: #ffe4f0;
+        --rose: #ff99c8;
+        --dusty: #f06292;
+        --deep: #d81b60;
+        --ink: #48001a;
+        --muted: #ad1457;
+        --surface: #ffffff;
+        --white: #ffffff;
+        --border: #ffecf2;
+        --border-soft: #fff0f5;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: var(--blush);
+        background-image: 
+          radial-gradient(ellipse at top left, rgba(255, 245, 249, 0.8), transparent),
+          radial-gradient(ellipse at bottom right, rgba(255, 153, 200, 0.2), transparent);
+        font-family: 'Jost', sans-serif;
+        color: var(--ink);
+        overflow-x: hidden;
+      }
+
+      @keyframes rise {
+        from {
+          opacity: 0;
+          transform: translateY(22px) scale(0.985);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      .animate-rise {
+        animation: rise 0.55s cubic-bezier(0.22, 0.8, 0.36, 1) forwards;
+      }
+
+      @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        25% { transform: translateX(-6px); }
+        75% { transform: translateX(6px); }
+      }
+
+      .animate-shake {
+        animation: shake 0.35s ease-in-out;
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-4px); }
+      }
+
+      .animate-float {
+        animation: float 3s ease-in-out infinite;
+      }
+
+      .font-serif { font-family: 'Cormorant Garamond', serif; }
+      .font-sans { font-family: 'Jost', sans-serif; }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: var(--blush); }
+      ::-webkit-scrollbar-thumb { background: var(--rose); border-radius: 10px; }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              blush: '#fff5f9',
+              petal: '#ffe4f0',
+              rose: '#ff99c8',
+              dusty: '#f06292',
+              deep: '#d81b60',
+              ink: '#48001a',
+              muted: '#ad1457',
+              surface: '#ffffff',
+              border: '#ffecf2',
+              'border-soft': '#fff0f5',
+              success: '#f0fff4',
+              'success-text': '#22543d',
+              'success-border': '#c6f6d5',
+              error: '#fff5f5',
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
